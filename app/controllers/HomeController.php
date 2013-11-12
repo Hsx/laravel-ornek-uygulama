@@ -8,7 +8,7 @@ class HomeController extends BaseController
 	public function index()
 	{
             // SON GÖNDERİLEN SORULARI ÇEKELİM
-            $lastQuestions = Questions::with('user')->orderBy('id', 'DESC')->take(5)->get();
+            $lastQuestions = Question::with('user')->orderBy('id', 'DESC')->take(5)->get();
             
             // EN SON CEVAP YAZILAN SORULARI ÇEKELİM
             $lastComments = Comments::with('user', 'questions')
