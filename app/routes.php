@@ -35,11 +35,16 @@ Route::get('sorular', array('as' => 'allQuestions', 'uses' => 'QuestionsControll
 // QuestionsController Sınıfında Tanımlı detail metodu çalıştırılır.
 Route::get('soru/{id}', array('as' => 'getQuestion', 'uses' => 'QuestionsController@detail'));
 
-// QuestionsController Sınıfında Tanımlı newQuestionForm metodu çalıştırılır.
-Route::get('soru-sor', array('as' => 'newQuestionForm', 'uses' => 'QuestionsController@newQuestionForm', 'before' => 'auth'));
+Route::group(array('before' => 'auth'), function()
+{
 
-// QuestionsController Sınıfında Tanımlı newQuestion metodu çalıştırılır. (Sadece POST Metoduyla, AUTH korumasıyla Çalışır)
-Route::post('soru-sor', array('as' => 'newQuestion', 'uses' => 'QuestionsController@newQuestion', 'before' => 'auth'));
+	// QuestionsController Sınıfında Tanımlı newQuestionForm metodu çalıştırılır.
+	Route::get('soru-sor', array('as' => 'newQuestionForm', 'uses' => 'QuestionsController@newQuestionForm'));
 
-// CommentsController Sınıfında Tanımlı newComment metodu çalıştırılır. (Sadece POST Metoduyla, AUTH korumasıyla Çalışır)
-Route::post('yorum-ekle', array('as' => 'newComment', 'uses' => 'CommentsController@newComment', 'before' => 'auth'));
+	// QuestionsController Sınıfında Tanımlı newQuestion metodu çalıştırılır. (Sadece POST Metoduyla, AUTH korumasıyla Çalışır)
+	Route::post('soru-sor', array('as' => 'newQuestion', 'uses' => 'QuestionsController@newQuestion'));
+
+	// CommentsController Sınıfında Tanımlı newComment metodu çalıştırılır. (Sadece POST Metoduyla, AUTH korumasıyla Çalışır)
+	Route::post('yorum-ekle', array('as' => 'newComment', 'uses' => 'CommentsController@newComment'));
+
+});
