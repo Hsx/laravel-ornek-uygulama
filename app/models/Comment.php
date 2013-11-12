@@ -1,8 +1,6 @@
 <?php
 
-class Comments extends Eloquent {
-
-        protected $table = 'comments';
+class Comment extends Eloquent {
         
         protected $fillable = array('comment', 'created_at', 'created_ip');
         
@@ -13,7 +11,7 @@ class Comments extends Eloquent {
         
         public function questions() 
         {
-            return $this->belongsTo('Questions', 'question_id');
+            return $this->belongsTo('Question', 'question_id');
         } 
     
 }
