@@ -35,7 +35,7 @@ class CommentsController extends BaseController
             } else {
 
                 // SORUYU VERİTABANINA EKLEYELİM
-                $comment = new Comments();
+                $comment = new Comment();
                 $comment->user_id = Auth::user()->id;
                 $comment->question_id = $postData['question_id'];
                 $comment->comment = e(trim($postData['comment']));
