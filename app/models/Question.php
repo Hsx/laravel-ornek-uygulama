@@ -1,8 +1,6 @@
 <?php
 
-class Questions extends Eloquent {
-
-        protected   $table = 'questions';
+class Question extends Eloquent {
         
         protected $fillable = array('title', 'content', 'created_at', 'created_ip');
         
@@ -13,7 +11,7 @@ class Questions extends Eloquent {
         
         public function comments() 
         {
-            return $this->hasMany('Comments', 'question_id');
+            return $this->hasMany('Comment', 'question_id');
         }
     
 }
