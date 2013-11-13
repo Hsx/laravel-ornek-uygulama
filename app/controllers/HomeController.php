@@ -11,7 +11,7 @@ class HomeController extends BaseController
             $lastQuestions = Question::with('user')->orderBy('id', 'DESC')->take(5)->get();
             
             // EN SON CEVAP YAZILAN SORULARI ÇEKELİM
-            $lastComments = Comments::with('user', 'questions')
+            $lastComments = Comment::with('user', 'questions')
                                                     ->orderBy('id', 'DESC')
                                                     ->take(5)
                                                     ->get();
