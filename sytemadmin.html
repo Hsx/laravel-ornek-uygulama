@@ -1,0 +1,1032 @@
+
+<!doctype html>
+<html lang="tr">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="an8YVTapSUcHsugKyvEeVo9FJTW9mQ2WYJzZ2UZf">
+    <title>Reportiz</title>
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/custom.css?v13" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.5/css/flag-icon.min.css"
+          integrity="sha512-Kr0zV71OG2KVTHFnCHHccI+3melPJbu/xPhJOK983MVj/1aigFkqktSzJahWSTkJllaLeSGJQY57xW9E3ndmDw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="/assets/fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet"> <!--load all styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="/assets/toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
+
+        <!--#headstyle-->
+    <!--headscripts-->
+        <style>
+        #acordionMenu {
+            color: white;
+
+        }
+
+
+        /* ============ desktop view ============ */
+        @media  all and (min-width: 992px) {
+
+            .dropdown-menu li {
+                position: relative;
+            }
+
+            .dropdown-menu .submenu {
+                display: none;
+                position: absolute;
+                left: 100%;
+                top: -7px;
+            }
+
+            .dropdown-menu .submenu-left {
+                right: 100%;
+                left: auto;
+            }
+
+            .dropdown-menu > li:hover {
+                background-color: #f1f1f1
+            }
+
+            .dropdown-menu > li:hover > .submenu {
+                display: block;
+            }
+        }
+
+        /* ============ desktop view .end// ============ */
+
+        /* ============ small devices ============ */
+        @media (max-width: 991px) {
+
+            .dropdown-menu .dropdown-menu {
+                margin-left: 0.7rem;
+                margin-right: 0.7rem;
+                margin-bottom: .5rem;
+            }
+
+        }
+
+        /* ============ small devices .end// ============ */
+    </style>
+
+</head>
+<body >
+
+<header class="navbar  navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="https://reportiz-v2.trysec.com"> Reportiz</a>
+            <!-- ============= COMPONENT ============== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="main_nav">
+            <a href="javascript:void(0)" onclick="toogleNav()" style="">
+                <i class="bi bi-layout-text-sidebar-reverse" style="color:white"></i>
+            </a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="/">Anasayfa</a></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                                                 data-bs-toggle="dropdown"> Proje Yönetimi </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/project/new">Yeni Proje</a></li>
+                        <li><a class="dropdown-item"
+                               href="/projects">Projeleri Listele </a>
+                        </li>
+                        <li>
+                            <hr/>
+                        </li>
+
+                                                    <li><a class="dropdown-item" href="#">T.C. Sağlık Bakanlığı  &raquo; </a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item"
+                                           href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/preview">Proje Detayları </a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Proje Testleri &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li><a class="dropdown-item"
+                                                   href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/test/new_test">Yeni Test Oluştur</a>
+                                            </li>
+
+                                            <li><a class="dropdown-item"
+                                                   href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/test/list">Proje Testlerini Listele </a>
+                                            </li>
+                                            <li>
+                                                <hr/>
+                                            </li>
+                                                                                            <li><a class="dropdown-item"
+                                                       href="#">Dış (İnternet Üzerinden) Penetrasyon Testleri &raquo; </a>
+                                                    <ul class="submenu dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/test/38b2caee-bb63-45bf-83c5-01e360c85f81/details">Test Detayları </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/test/38b2caee-bb63-45bf-83c5-01e360c85f81/details">Test Bulguları  &raquo; </a>
+                                                            <ul class=" submenu dropdown-menu">
+                                                                <li><a class="dropdown-item"
+                                                                       href="/test/38b2caee-bb63-45bf-83c5-01e360c85f81/finding/new">Yeni Bulgu Oluştur </a>
+
+                                                                </li>
+
+                                                                <li><a class="dropdown-item"
+                                                                       href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/reports/list">Bulguları Listele</a>
+                                                                </li>
+                                                                <li>
+                                                                    <hr/>
+                                                                </li>
+                                                                                                                                    <li><a class="dropdown-item"
+                                                                           href="/finding/eb23777f-fa4c-4227-ae44-f6703a35c8d7/details">Formula Injection </a>
+                                                                    </li>
+                                                                                                                                    <li><a class="dropdown-item"
+                                                                           href="/finding/3c20812f-7754-49e7-873b-aed8f4229e34/details">Duyuru Ekleme Sayfası Stored XSS Zafiyeti </a>
+                                                                    </li>
+                                                                                                                                    <li><a class="dropdown-item"
+                                                                           href="/finding/65658618-15e4-4d98-8db0-2954f55a4b5c/details">Cross Site Scripting – XSS (Siteler Arası Betik Kod Çalıştırma) </a>
+                                                                    </li>
+                                                                                                                                    <li><a class="dropdown-item"
+                                                                           href="/finding/5c81af13-81a7-4f5b-b315-4348d2adeb45/details">Full Path Disclosure - Uygulama Tam Dizini Bilgi Sızdırma Zafiyeti </a>
+                                                                    </li>
+                                                                                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                                                            <li><a class="dropdown-item"
+                                                       href="#">Web Sızma Testi &raquo; </a>
+                                                    <ul class="submenu dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/test/5d83a351-7b59-43b5-873a-de75e5b0259e/details">Test Detayları </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/test/5d83a351-7b59-43b5-873a-de75e5b0259e/details">Test Bulguları  &raquo; </a>
+                                                            <ul class=" submenu dropdown-menu">
+                                                                <li><a class="dropdown-item"
+                                                                       href="/test/5d83a351-7b59-43b5-873a-de75e5b0259e/finding/new">Yeni Bulgu Oluştur </a>
+
+                                                                </li>
+
+                                                                <li><a class="dropdown-item"
+                                                                       href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/reports/list">Bulguları Listele</a>
+                                                                </li>
+                                                                <li>
+                                                                    <hr/>
+                                                                </li>
+                                                                                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                                                    </ul>
+                                    </li>
+                                    <li><a class="dropdown-item"
+                                           href="#">Proje Raporları &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li><a class="dropdown-item"
+                                                   href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/report/define">Yeni Rapor Oluştur </a>
+                                            </li>
+
+                                            <li><a class="dropdown-item"
+                                                   href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/reports/list">Proje Raporlarını Listele</a>
+                                            </li>
+                                            <li>
+                                                <hr/>
+                                            </li>
+                                                                                            <li><a class="dropdown-item"
+                                                       href="#">Graybox Web Uygulamaları Testi Sonuç Raporu [YTS]   &raquo; </a>
+                                                    <ul class="submenu dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/report/846fbf26-0725-4e0e-aa0e-d42fceb5a812/preview?1658989816">Raporu Görüntüle </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/report/846fbf26-0725-4e0e-aa0e-d42fceb5a812/download/docx?1658989816">Rapor İndir </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/report/846fbf26-0725-4e0e-aa0e-d42fceb5a812/detail/step/1">Rapor Düzenle </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                                                            <li><a class="dropdown-item"
+                                                       href="#">Durum Raporu   &raquo; </a>
+                                                    <ul class="submenu dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/report/05276322-6a44-4638-a3b8-f7cf65525ede/preview?1658989816">Raporu Görüntüle </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/report/05276322-6a44-4638-a3b8-f7cf65525ede/download/docx?1658989816">Rapor İndir </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/51a989c7-ee8c-4923-924f-d5b0f28e1854/report/05276322-6a44-4638-a3b8-f7cf65525ede/detail/step/1">Rapor Düzenle </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                                                    </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                                                    <li><a class="dropdown-item" href="#">Roketsan A.Ş.  &raquo; </a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item"
+                                           href="/project/9a02bfa1-350c-4f44-945f-3db86b412e17/preview">Proje Detayları </a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Proje Testleri &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li><a class="dropdown-item"
+                                                   href="/project/9a02bfa1-350c-4f44-945f-3db86b412e17/test/new_test">Yeni Test Oluştur</a>
+                                            </li>
+
+                                            <li><a class="dropdown-item"
+                                                   href="/project/9a02bfa1-350c-4f44-945f-3db86b412e17/test/list">Proje Testlerini Listele </a>
+                                            </li>
+                                            <li>
+                                                <hr/>
+                                            </li>
+                                                                                            <li><a class="dropdown-item"
+                                                       href="#">Graybox Web Uygulama Testleri &raquo; </a>
+                                                    <ul class="submenu dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/9a02bfa1-350c-4f44-945f-3db86b412e17/test/dbe74746-a250-4e7d-90d6-1056f385a16e/details">Test Detayları </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/9a02bfa1-350c-4f44-945f-3db86b412e17/test/dbe74746-a250-4e7d-90d6-1056f385a16e/details">Test Bulguları  &raquo; </a>
+                                                            <ul class=" submenu dropdown-menu">
+                                                                <li><a class="dropdown-item"
+                                                                       href="/test/dbe74746-a250-4e7d-90d6-1056f385a16e/finding/new">Yeni Bulgu Oluştur </a>
+
+                                                                </li>
+
+                                                                <li><a class="dropdown-item"
+                                                                       href="/project/9a02bfa1-350c-4f44-945f-3db86b412e17/reports/list">Bulguları Listele</a>
+                                                                </li>
+                                                                <li>
+                                                                    <hr/>
+                                                                </li>
+                                                                                                                                    <li><a class="dropdown-item"
+                                                                           href="/finding/8043e1c1-e34f-4a8d-8310-8baa780ce968/details">Gelişigüzel Dosya Yükleme Zafiyeti Üzerinden Uzaktan Komut Çalıştırma </a>
+                                                                    </li>
+                                                                                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                                                    </ul>
+                                    </li>
+                                    <li><a class="dropdown-item"
+                                           href="#">Proje Raporları &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li><a class="dropdown-item"
+                                                   href="/project/9a02bfa1-350c-4f44-945f-3db86b412e17/report/define">Yeni Rapor Oluştur </a>
+                                            </li>
+
+                                            <li><a class="dropdown-item"
+                                                   href="/project/9a02bfa1-350c-4f44-945f-3db86b412e17/reports/list">Proje Raporlarını Listele</a>
+                                            </li>
+                                            <li>
+                                                <hr/>
+                                            </li>
+                                                                                            <li><a class="dropdown-item"
+                                                       href="#">Yerel Ağ Üzerinden Web Uygulamaları Sızma Testi Sonuç Raporu   &raquo; </a>
+                                                    <ul class="submenu dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/9a02bfa1-350c-4f44-945f-3db86b412e17/report/fa4f1d73-d47b-41f2-a266-f7ac93a836b6/preview?1658989816">Raporu Görüntüle </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/9a02bfa1-350c-4f44-945f-3db86b412e17/report/fa4f1d73-d47b-41f2-a266-f7ac93a836b6/download/docx?1658989816">Rapor İndir </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/9a02bfa1-350c-4f44-945f-3db86b412e17/report/fa4f1d73-d47b-41f2-a266-f7ac93a836b6/detail/step/1">Rapor Düzenle </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                                                    </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                                                    <li><a class="dropdown-item" href="#">T.C. Adalet Bakanlığı  &raquo; </a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item"
+                                           href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/preview">Proje Detayları </a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Proje Testleri &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li><a class="dropdown-item"
+                                                   href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/test/new_test">Yeni Test Oluştur</a>
+                                            </li>
+
+                                            <li><a class="dropdown-item"
+                                                   href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/test/list">Proje Testlerini Listele </a>
+                                            </li>
+                                            <li>
+                                                <hr/>
+                                            </li>
+                                                                                            <li><a class="dropdown-item"
+                                                       href="#">OSINT - Açık Kaynak İstihbaratı &raquo; </a>
+                                                    <ul class="submenu dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/test/0aef5039-360b-498a-ac51-48e419c91055/details">Test Detayları </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/test/0aef5039-360b-498a-ac51-48e419c91055/details">Test Bulguları  &raquo; </a>
+                                                            <ul class=" submenu dropdown-menu">
+                                                                <li><a class="dropdown-item"
+                                                                       href="/test/0aef5039-360b-498a-ac51-48e419c91055/finding/new">Yeni Bulgu Oluştur </a>
+
+                                                                </li>
+
+                                                                <li><a class="dropdown-item"
+                                                                       href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/reports/list">Bulguları Listele</a>
+                                                                </li>
+                                                                <li>
+                                                                    <hr/>
+                                                                </li>
+                                                                                                                                    <li><a class="dropdown-item"
+                                                                           href="/finding/2e7b99a6-d9dc-40d1-92d1-9cbd9893f8c2/details">OSINT (Açık Kaynak İstihbaratı) – Veri Sızıntısı </a>
+                                                                    </li>
+                                                                                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                                                            <li><a class="dropdown-item"
+                                                       href="#">deneme &raquo; </a>
+                                                    <ul class="submenu dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/test/f151d62d-8872-405d-94fe-dcaee8f5180d/details">Test Detayları </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/test/f151d62d-8872-405d-94fe-dcaee8f5180d/details">Test Bulguları  &raquo; </a>
+                                                            <ul class=" submenu dropdown-menu">
+                                                                <li><a class="dropdown-item"
+                                                                       href="/test/f151d62d-8872-405d-94fe-dcaee8f5180d/finding/new">Yeni Bulgu Oluştur </a>
+
+                                                                </li>
+
+                                                                <li><a class="dropdown-item"
+                                                                       href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/reports/list">Bulguları Listele</a>
+                                                                </li>
+                                                                <li>
+                                                                    <hr/>
+                                                                </li>
+                                                                                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                                                            <li><a class="dropdown-item"
+                                                       href="#">deneme &raquo; </a>
+                                                    <ul class="submenu dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/test/931bf403-be7d-410c-8215-63ee58e2a57f/details">Test Detayları </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/test/931bf403-be7d-410c-8215-63ee58e2a57f/details">Test Bulguları  &raquo; </a>
+                                                            <ul class=" submenu dropdown-menu">
+                                                                <li><a class="dropdown-item"
+                                                                       href="/test/931bf403-be7d-410c-8215-63ee58e2a57f/finding/new">Yeni Bulgu Oluştur </a>
+
+                                                                </li>
+
+                                                                <li><a class="dropdown-item"
+                                                                       href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/reports/list">Bulguları Listele</a>
+                                                                </li>
+                                                                <li>
+                                                                    <hr/>
+                                                                </li>
+                                                                                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                                                    </ul>
+                                    </li>
+                                    <li><a class="dropdown-item"
+                                           href="#">Proje Raporları &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li><a class="dropdown-item"
+                                                   href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/report/define">Yeni Rapor Oluştur </a>
+                                            </li>
+
+                                            <li><a class="dropdown-item"
+                                                   href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/reports/list">Proje Raporlarını Listele</a>
+                                            </li>
+                                            <li>
+                                                <hr/>
+                                            </li>
+                                                                                            <li><a class="dropdown-item"
+                                                       href="#">Adalet Bakanlığı PoC Raporu   &raquo; </a>
+                                                    <ul class="submenu dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/report/7a9a45f6-de46-4c88-86f9-18d631252809/preview?1658989816">Raporu Görüntüle </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/report/7a9a45f6-de46-4c88-86f9-18d631252809/download/docx?1658989816">Rapor İndir </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/report/7a9a45f6-de46-4c88-86f9-18d631252809/detail/step/1">Rapor Düzenle </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                                                            <li><a class="dropdown-item"
+                                                       href="#">Adalet Bakanlığı PoC Raporu 2   &raquo; </a>
+                                                    <ul class="submenu dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/report/4c4a9197-7ac8-478c-88ec-a59a8bd35506/preview?1658989816">Raporu Görüntüle </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/report/4c4a9197-7ac8-478c-88ec-a59a8bd35506/download/docx?1658989816">Rapor İndir </a>
+                                                        </li>
+                                                        <li><a class="dropdown-item"
+                                                               href="/project/ae43a9b1-be92-480b-9bb4-1884b77c8fc9/report/4c4a9197-7ac8-478c-88ec-a59a8bd35506/detail/step/1">Rapor Düzenle </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                                                    </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                                                    <li><a class="dropdown-item" href="#">TEDAŞ  &raquo; </a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item"
+                                           href="/project/67262a96-d02d-42cf-afd5-0e61e4e08ae0/preview">Proje Detayları </a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Proje Testleri &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li><a class="dropdown-item"
+                                                   href="/project/67262a96-d02d-42cf-afd5-0e61e4e08ae0/test/new_test">Yeni Test Oluştur</a>
+                                            </li>
+
+                                            <li><a class="dropdown-item"
+                                                   href="/project/67262a96-d02d-42cf-afd5-0e61e4e08ae0/test/list">Proje Testlerini Listele </a>
+                                            </li>
+                                            <li>
+                                                <hr/>
+                                            </li>
+                                                                                    </ul>
+                                    </li>
+                                    <li><a class="dropdown-item"
+                                           href="#">Proje Raporları &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li><a class="dropdown-item"
+                                                   href="/project/67262a96-d02d-42cf-afd5-0e61e4e08ae0/report/define">Yeni Rapor Oluştur </a>
+                                            </li>
+
+                                            <li><a class="dropdown-item"
+                                                   href="/project/67262a96-d02d-42cf-afd5-0e61e4e08ae0/reports/list">Proje Raporlarını Listele</a>
+                                            </li>
+                                            <li>
+                                                <hr/>
+                                            </li>
+                                                                                    </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                                            </ul>
+                </li>
+
+            </ul>
+
+            <!--li class=" nav-item">
+    <a class="nav-link" aria-current="page" href="/reports">Raporları Listele</a></li-->
+            <!--li class="nav-item"><a class="nav-link" aria-current="page" href="/report/new">Yeni Rapor Oluştur </a></li-->
+            <!--li class="nav-item"><a class="nav-link" href="/master/findings">Bulgular Veritabanı</a></li-->
+            <!--li class="nav-item"><a class="nav-link" href="/consultant">Danışman Bilgileri </a></li-->
+
+        </div> <!-- navbar-collapse.// -->
+    </div> <!-- container-fluid.// -->
+</nav>
+
+<!-- ============= COMPONENT END// ============== -->
+
+
+
+
+
+
+        <div class="d-flex justify-content-end w-100 p-3">
+        <ul class="nav">
+                            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown"
+                       aria-expanded="false" title="Notifications"><i class="fas fa-bell"></i></a>
+                    <ul class="dropdown-menu notification notification dropdown-scrollbar">
+                        <li>
+                            <p>Bildirimler</p>
+                        </li>
+                                                
+                            <li class="external">Bildirim yok!</li>
+                                                <li class="external"><a href="/notifications">Hepsini Gör</a></li>
+
+
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown"
+                       aria-expanded="false" title="Update system notifications"><i class="fas fa-level-up-alt"></i></a>
+
+                    <ul class="dropdown-menu notification dropdown-scrollbar" aria-labelledby="dropdown05">
+                        <li>
+                            <p>Updates</p>
+                        </li>
+
+                                                
+                            
+                                <li class="external">
+                                    <!--begin::Item-->
+
+                                    <div class="d-flex flex-stack py-4">
+                                        <!--begin::Section-->
+                                        <div class="d-flex align-items-center">
+
+                                            <!--begin::Title-->
+                                            <div class="mb-0 me-2">Raporlanan hatalar düzeltildi.</div>
+                                            <div class="text-gray-400 fs-7">0.98.48.01</div>
+
+                                            <!--end::Title-->
+                                        </div>
+                                        <!--end::Section-->
+                                        <!--begin::Label-->
+                                        <span
+                                            class="badge badge-light fs-8">1 ay önce</span>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Title-->
+                                </li>
+                                                                            <li class="external"><a href="https://reportiz-v2.trysec.com/updates"
+                                                target="_blank">Hepsini Gör</a></li>
+
+
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-bs-toggle="dropdown"
+                       aria-expanded="false" title="Alert Logs"><i class="fa fa-history" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu dropdown-scrollbar" aria-labelledby="dropdown06" style="left:-125px;">
+                        <li>
+                            <p>Alert Logs</p>
+                        </li>
+                        <div id="alertLogsF"></div>
+                    </ul>
+                </li>
+                                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-bs-toggle="dropdown"
+                       aria-expanded="false"
+                       title="Language: Türkçe"><i
+                            class="fa fa-language" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu  pull-right mx-10px dropdown-scrollbar" aria-labelledby="dropdown07"
+                        style="left:-180px;">
+                                                    <li class="nav-item"><a class="dropdown-item" href="/change/lang/tr"><span
+                                        class="flag-icon flag-icon-tr"></span> Turkish                                         <i class="fa fa-check" aria-hidden="true"></i>
+                                     </a></li>
+                                                    <li class="nav-item"><a class="dropdown-item" href="/change/lang/ru"><span
+                                        class="flag-icon flag-icon-ru"></span> Russian  </a></li>
+                                                    <li class="nav-item"><a class="dropdown-item" href="/change/lang/it"><span
+                                        class="flag-icon flag-icon-it"></span> Italian  </a></li>
+                                                    <li class="nav-item"><a class="dropdown-item" href="/change/lang/fr"><span
+                                        class="flag-icon flag-icon-fr"></span> French  </a></li>
+                                                    <li class="nav-item"><a class="dropdown-item" href="/change/lang/fa"><span
+                                        class="flag-icon flag-icon-fa"></span> Persian  </a></li>
+                                                    <li class="nav-item"><a class="dropdown-item" href="/change/lang/en"><span
+                                        class="flag-icon flag-icon-en"></span> English  </a></li>
+                                                    <li class="nav-item"><a class="dropdown-item" href="/change/lang/de"><span
+                                        class="flag-icon flag-icon-de"></span> German  </a></li>
+                                                    <li class="nav-item"><a class="dropdown-item" href="/change/lang/az"><span
+                                        class="flag-icon flag-icon-az"></span> Azerbaijani  </a></li>
+                                                    <li class="nav-item"><a class="dropdown-item" href="/change/lang/ar"><span
+                                        class="flag-icon flag-icon-ar"></span> Arabic  </a></li>
+                                            </ul>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-bs-toggle="dropdown"
+                       aria-expanded="false">  System Admin</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown08" style="left:-50px;">
+                        <li class="dropdown-item"><a class="dropdown-item" href="/profile">Profile</a></li>
+                        <li class="dropdown-item"><a class="dropdown-item"
+                                                     href="/user/settings">Kullanıcı Ayarları</a></li>
+                        <li class="dropdown-item" class="dropdown-menu dropdown-menu-right"
+                            aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://reportiz-v2.trysec.com/logout"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+                            <form id="logout-form" action="https://reportiz-v2.trysec.com/logout" method="POST" class="d-none">
+                                <input type="hidden" name="_token" value="an8YVTapSUcHsugKyvEeVo9FJTW9mQ2WYJzZ2UZf">                            </form>
+                        </li>
+                    </ul>
+                </li>
+                    </ul>
+    </div>
+</header>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div id="mySidepanel" class="sidepanel">
+                    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <div class="position-sticky pt-3">
+
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Yönetici Menüsü</span>
+                        <a class="link-secondary" href="#" aria-label="Add a new report">
+                            <span data-feather="plus-circle"></span>
+                        </a>
+                    </h6>
+             <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/pentester/add">
+                            <i class="bi bi-file-person-fill"></i>
+                            Pentester Firması Ekle                        </a>
+                    </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="/admin/pentester/list">
+                         <i class="bi bi-file-person-fill"></i>
+                         Pentester Firmaları Listele                     </a>
+                 </li>
+
+                 <li class="nav-item">
+                     <a class="nav-link" href="/register/manager/add">
+                         <i class="bi bi-file-person-fill"></i>
+                         Zafiyet Yöneticisi Ekle                     </a>
+                 </li>
+
+                 <li class="nav-item">
+                     <a class="nav-link" href="/admin/users/lists">
+                         <i class="bi bi-file-person-fill"></i>
+                         Kullanıcıları Listele                     </a>
+                 </li>
+
+            <!--li class="nav-item">
+                <a class="nav-link" href="/admin/templates/add">
+                    <span data-feather="bar-chart-2"></span>
+                    Rapor Şablonu Ekle                </a>
+            </li-->
+            <!--li class="nav-item">
+                <a class="nav-link" href="/admin/templates">
+                    <span data-feather="bar-chart-2"></span>
+                    Rapor Şablonlarını Listele                </a>
+            </li-->
+            <!--li class="nav-item">
+                <a class="nav-link" href="/admin/udo_templates">
+                    <span data-feather="bar-chart-2"></span>
+                    Kullanıcı Tanımlı Nesneler                </a>
+            </li-->
+
+
+            <!--li class="nav-item">
+                <a class="nav-link" href="/admin/plugins">
+                    <span data-feather="layers"></span>
+                    Eklentileri Aç/Kapa                </a>
+            </li-->
+
+            <!--li class="nav-item">
+                <a class="nav-link" href="/admin/admin_plugins">
+                    <span data-feather="layers"></span>
+                    Yöneticiye Özel Eklentiler                </a>
+            </li-->
+
+                 <li class="nav-item">
+                     <a class="nav-link" href="/admin/sourcedb/form">
+                         Kaynak Veritabanı Gönder                     </a>
+                 </li>
+
+                 <li class="nav-item">
+                     <a class="nav-link" href="/admin/database/cwedb">
+                         CWEdb Kur                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="/admin/database/tables/list/cwedb">
+                         CWE Veritabanı Tabloları                     </a>
+                 </li>
+
+
+                 <li class="nav-item">
+                     <a class="nav-link" href="/admin/database/cvedb">
+                         Cve Kur                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="/admin/database/tables/list/cvedb">
+                         Cve Veritabanı Listele                     </a>
+                 </li>
+
+                 <li class="nav-item">
+                     <a class="nav-link" href="/admin/database/tables/list/maindb">
+                         Ana Veritabanı Tabloları                     </a>
+                 </li>
+
+                 <li class="nav-item">
+                     <a class="nav-link" href="/admin/menu_regulatory">
+                         Menü Düzenleyici                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="/admin/multilanguage_setting">
+                         Çoklu Dil Ayarları                     </a>
+                 </li>
+
+
+
+                 <li class="nav-item">
+                     <a class="nav-link" href="/admin/queue/status">
+                         Kuyruk Durumu                     </a>
+                 </li>
+
+
+
+
+
+                 <li class="nav-item">
+                        <a href="#submenu3" data-bs-toggle="collapse" class="sidebar-link px-0 align-middle">
+                            <i class="bi bi-bootstrap"></i>  <span class="ms-1 d-none d-sm-inline">     Genel</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+
+                            <li>
+                                <a class="sidebar-link px-0" href="/admin/configs">
+                                    Konfigürasyon 1
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sidebar-link px-0" href="/backups/plugins">
+                                    Ekleri Yedekle 2
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sidebar-link px-0" href="/backups/databases">
+                                    Database Yedekle3
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                 <li class="nav-item">  php version: 7.4.3  </li>
+                 <li class="nav-item"> Post max size:  256M </li>
+             </ul>
+
+        </div>
+      </nav>
+
+
+            </div>
+            <div id="main" class="col py-3">
+
+                    <div class="container">
+        <div class="row justify-content-center">
+
+            <div class="col-md-8">
+
+                <div class="card">
+                    <div class="card-header">Zaafiyet Grafiği</div>
+
+                    <div class="card-body">
+                        
+
+                        <div class="row">
+                            <div class="col-md-10">
+                                <canvas id="canvas" height="375" width="800"></canvas>
+                            </div>
+                            <div class="col-md-2">
+
+                                    <svg class="legend" width="125" height="150">
+                                                                                    <g transform="translate(0,0)">
+                                                <rect width="20" height="20" style="fill:#c61919"></rect>
+                                                <text x="25" y="10" dy=".40em">
+                                                    Acil: 0
+                                                </text>
+                                            </g>
+                                                                                    <g transform="translate(0,25)">
+                                                <rect width="20" height="20" style="fill:#ff1919"></rect>
+                                                <text x="25" y="10" dy=".40em">
+                                                    Kritik: 2
+                                                </text>
+                                            </g>
+                                                                                    <g transform="translate(0,50)">
+                                                <rect width="20" height="20" style="fill:#ff7a19"></rect>
+                                                <text x="25" y="10" dy=".40em">
+                                                    Yüksek: 2
+                                                </text>
+                                            </g>
+                                                                                    <g transform="translate(0,75)">
+                                                <rect width="20" height="20" style="fill:#ffff19"></rect>
+                                                <text x="25" y="10" dy=".40em">
+                                                    Orta: 2
+                                                </text>
+                                            </g>
+                                                                                    <g transform="translate(0,100)">
+                                                <rect width="20" height="20" style="fill:#9cd461"></rect>
+                                                <text x="25" y="10" dy=".40em">
+                                                    Düşük: 0
+                                                </text>
+                                            </g>
+                                                                            </svg>
+
+                                <br/>            <strong>Grafik Tipi</strong>
+                                <ul>
+                                    <li><a href="/admin/?chart_type=bar">Bar</a></li>
+                                    <li><a href="/admin/?chart_type=doughnut">Doughnut</a></li>
+                                    <li><a href="/admin/?chart_type=pie">Pie</a></li>
+                                    <li><a href="/admin/?chart_type=polararea">Polar Area</a></li>
+                                </ul>
+
+
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/js/bootstrap-select.min.js" charset="utf-8"></script>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js" charset="utf-8"></script>
+                                                                    <script>
+    var url = "https://reportiz-v2.trysec.com/project/0/chart";
+    console.log(url);
+    var Label = new Array();
+    var Risk = new Array();
+    var Sum = new Array();
+    var Color = new Array();
+
+    $(document).ready(function(){
+
+        $.get(url, function(response){
+            response.forEach(function(data){
+            //    console.log(data);
+                Label.push(data.r_language.text);
+                Risk.push(data.risk);
+                Color.push(data.color);
+                let sum =0;
+              //  console.log(data.findings)
+                if (data.findings !== null) {
+                    sum =  data.findings.sum;
+                }
+               Sum.push(sum);
+            });
+
+           // console.log('Sum',Sum);
+
+            //'bar',//'polarArea',//'scatter',//,//'doughnut',//'radar',//'line',//'bar',
+            var ctx = document.getElementById("canvas").getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: Label,
+                    datasets: [{
+                        data: Sum,
+                        backgroundColor: [
+                            Color[0],
+                            Color[1],
+                            Color[2],
+                            Color[3],
+                            Color[4],
+                            Color[5],
+                        ],
+                       hoverOffset: 4
+                    }]
+                },
+
+            });
+        });
+    });
+</script>
+
+                                                                <br/>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="/assets/js/jquery-3.6.0.min.js"></script>
+<!-- https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+        integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+        crossorigin="anonymous"></script>
+<script src="/assets/toastr/toastr.min.js"></script>
+
+
+<script src="/assets/js/custom.js?v12" type="text/javascript"></script>
+
+<!-- React  -->
+
+    <script src="/assets/js/sidebar.js"></script>
+    <script>
+            </script>
+<script>
+    //  var tooltipElement = document.getElementById('tooltip');
+    // var tooltip = new bootstrap.Tooltip(tooltipElement);
+
+    function toogleNav() {
+        if (document.getElementById("mySidepanel").clientWidth > 100) {
+            closeNav();
+        } else {
+            openNav();
+        }
+    }
+
+    // <button class="openbtn" onclick="openNav()">&#9776; Toggle Sidepanel</button>
+
+    function closeNav() {
+
+        //  document.getElementById("sidebarMenu").style.width = "0";
+        //      ** document.getElementById("main").style.marginLeft = "0";
+        document.getElementById("mySidepanel").style.width = "0";
+        setCookie('defaultThemeSidebarHide', true, 1)
+    }
+
+    function openNav() {
+        // document.getElementById("sidebarMenu").style.width = "295px";
+        //document.getElementById("main").style.marginLeft = "300px";
+        document.getElementById("mySidepanel").style.width = "290px";
+        setCookie('defaultThemeSidebarHide', false, 1)
+    }
+
+
+</script>
+
+<script>
+    $(document).ready(function () {
+
+        let sh = getCookie('defaultThemeSidebarHide');
+
+        if (sh == 'true') {
+            closeNav();
+        } else {
+            openNav();
+        }
+
+        setInterval(getLogs, 200000);
+    });
+
+
+    function getLogs() {
+        $("#alertLogsF").load("/showlogs");
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $("#sidebarCollapse").on('click', function () {
+            $("#sidebar").toggleClass('active');
+        })
+    });
+</script>
+
+<script type="text/javascript">
+    //	window.addEventListener("resize", function() {
+    //		"use strict"; window.location.reload();
+    //	});
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+
+        /////// Prevent closing from click inside dropdown
+        document.querySelectorAll('.dropdown-menu').forEach(function (element) {
+            element.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        })
+
+
+        // make it as accordion for smaller screens
+        if (window.innerWidth < 992) {
+
+            // close all inner dropdowns when parent is closed
+            document.querySelectorAll('.navbar .dropdown').forEach(function (everydropdown) {
+                everydropdown.addEventListener('hidden.bs.dropdown', function () {
+                    // after dropdown is hidden, then find all submenus
+                    this.querySelectorAll('.submenu').forEach(function (everysubmenu) {
+                        // hide every submenu as well
+                        everysubmenu.style.display = 'none';
+                    });
+                })
+            });
+
+            document.querySelectorAll('.dropdown-menu a').forEach(function (element) {
+                element.addEventListener('click', function (e) {
+
+                    let nextEl = this.nextElementSibling;
+                    if (nextEl && nextEl.classList.contains('submenu')) {
+                        // prevent opening link if link needs to open dropdown
+                        e.preventDefault();
+                        console.log(nextEl);
+                        if (nextEl.style.display == 'block') {
+                            nextEl.style.display = 'none';
+                        } else {
+                            nextEl.style.display = 'block';
+                        }
+
+                    }
+                });
+            })
+        }
+        // end if innerWidth
+
+    });
+    // DOMContentLoaded  end
+</script>
+
+</body>
+</html>
